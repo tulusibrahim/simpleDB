@@ -1,9 +1,16 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+# SimpleDB
 
-## Getting Started
+Simplify your way to store simple data.
 
-First, run the development server:
+## Getting started
+
+- Fork the project
+- Clone to your machine
+```
+git clone https://github.com/<githubUsername>/simpleDB.git
+```
+Then, run the development server:
 
 ```bash
 npm run dev
@@ -15,34 +22,37 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ## API Reference
 
-POST <br />
-add new property <br />
-/add/{propertyName} <br />
-<br />
-POST <br />
-add new data *property must exist first <br />
-/add/{propertyName}/{data} <br />
-<br />
-GET <br />
-get all stored property <br />
-/select/properties <br />
-<br />
-GET <br />
-get all data based on property <br />
-/select/{propertyName} <br />
-<br />
-GET <br />
-get data based on search/query data <br />
-/select/{propertyName}/{data} <br />
-<br />
-UPDATE <br />
-update data based on search/query data <br />
-/update/{propertyName}/{oldData}/{newData} <br />
-<br />
-DELETE <br /> 
-delete specific data on a property <br />
-/delete/{propertyName}/{data} <br />
+Base URL: ```https://simpledb.vercel.app/api```
 
-<!-- DELETE
-delete property and also the whole data attached to it
-/delete/{propertyName} -->
+### Add new property
+
+GET `/add/{propertyName} `
+
+### Add new data
+
+GET `/add/{propertyName}/{data}`   
+`note` Property must exist first 
+
+### Get all stored property
+
+GET `/select/properties` 
+
+### Get all data based on property
+
+GET `/select/{propertyName}` 
+
+### Get specific data
+
+GET `/select/{propertyName}/{data}` 
+
+### Update data
+
+GET `/update/{propertyName}/{oldData}/{newData}` 
+
+### Delete data
+
+GET `/delete/{propertyName}/{data}`    
+
+Credits
+
+Copyright © 2022 Tulus Ibrahim
