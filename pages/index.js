@@ -27,8 +27,9 @@ export default function Home() {
       <Head>
         <title>SimpleDB</title>
         <meta name="description" content="Create database as simple as generate a link" />
+        <meta property="og:image" content="/logo.png" />
         <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet"></link>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/icon.png" />
       </Head>
 
       <Navbar test={test} toggleColorMode={toggleColorMode} />
