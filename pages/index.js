@@ -17,7 +17,7 @@ export default function Home() {
     //2323r23r
     //3rr43434r
     let tess = 'beda header cb/gajadi ah'
-    let url = 'http://localhost:3000/api/select/username'
+    let url = 'https://simpledb.vercel.app/api/select/username'
     let insert = await fetch(url, { headers: { userid: '3rr43434r' } })
     console.log(await insert.json())
   }

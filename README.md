@@ -1,38 +1,5 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-header:userId
-
-POST
-add new property
-/add/{propertyName}
-
-POST
-add new data *property must exist first
-/add/{propertyName}/{data}
-
-GET
-get all stored property
-/select/properties
-
-GET
-get all data based on property
-/select/{propertyName}
-
-GET
-get data based on search/query data
-/select/{propertyName}/{data}
-
-UPDATE
-update data based on search/query data
-/update/{propertyName}/{oldData}/{newData}
-
-DELETE
-delete specific data on a property
-/delete/{propertyName}/{data}
-
-<!-- DELETE
-delete property and also the whole data attached to it
-/delete/{propertyName} -->
 
 ## Getting Started
 
@@ -46,23 +13,36 @@ yarn dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## API Reference
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+POST <br />
+add new property <br />
+/add/{propertyName} <br />
+<br />
+POST <br />
+add new data *property must exist first <br />
+/add/{propertyName}/{data} <br />
+<br />
+GET <br />
+get all stored property <br />
+/select/properties <br />
+<br />
+GET <br />
+get all data based on property <br />
+/select/{propertyName} <br />
+<br />
+GET <br />
+get data based on search/query data <br />
+/select/{propertyName}/{data} <br />
+<br />
+UPDATE <br />
+update data based on search/query data <br />
+/update/{propertyName}/{oldData}/{newData} <br />
+<br />
+DELETE <br /> 
+delete specific data on a property <br />
+/delete/{propertyName}/{data} <br />
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+<!-- DELETE
+delete property and also the whole data attached to it
+/delete/{propertyName} -->

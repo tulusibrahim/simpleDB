@@ -1,4 +1,4 @@
-import { Code, Flex, Icon, useToast } from "@chakra-ui/react";
+import { Code, Flex, Icon, useColorMode, useToast } from "@chakra-ui/react";
 import { BsFillPlusCircleFill } from 'react-icons/bs';
 import { MdContentCopy } from 'react-icons/md'
 import React, { useState, useEffect } from 'react';
@@ -6,9 +6,10 @@ import React, { useState, useEffect } from 'react';
 const CTA = () => {
     const [token, setToken] = useState('')
     const toast = useToast()
+    const { colorMode } = useColorMode()
 
     const generateToken = async (second) => {
-        let data = await fetch('http://localhost:3000/api/newtoken')
+        let data = await fetch('https://simpledb.vercel.app/api/newtoken')
         let json = await data.json()
         setToken(json.token)
         localStorage.setItem('user-token', json.token)
@@ -48,7 +49,7 @@ const CTA = () => {
                         <Flex w='90%' h='50%' justify='center' alignItems='center' fontSize={['1.5rem', '1.5rem', '2rem']} textAlign='center'>
                             No login needed, just create your token.
                         </Flex>
-                        <Flex onClick={generateToken} justify='center' alignItems='center' h='fit-content' w='fit-content' bg='whiteAlpha.200' transitionDuration='.3s' cursor='pointer' _hover={{ bgColor: 'whiteAlpha.300' }} px='10px' py='3px' fontSize='1.5rem' borderRadius='lg'>
+                        <Flex onClick={generateToken} justify='center' alignItems='center' h='fit-content' w='fit-content' bg={colorMode == 'dark' ? 'whiteAlpha.200' : 'gray.500'} transitionDuration='.3s' cursor='pointer' _hover={{ bgColor: colorMode == 'dark' ? 'whiteAlpha.300' : 'gray.600' }} px='10px' py='3px' fontSize='1.5rem' borderRadius='lg' color='white'>
                             Create my token &nbsp;<Icon as={BsFillPlusCircleFill} />
                         </Flex>
                     </>
