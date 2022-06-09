@@ -30,6 +30,17 @@ export default function Home() {
         <meta property="og:image" content="/logo.png" />
         <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet"></link>
         <link rel="icon" href="/icon.png" />
+        {/* Global site tag (gtag.js) - Google Analytics  */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-62X2XF38HD"></script>
+        <script dangerouslySetInnerHTML={{
+          __html: `
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-62X2XF38HD', { page_path: window.location.pathname });
+`}}>
+        </script>
       </Head>
 
       <Navbar test={test} toggleColorMode={toggleColorMode} />
