@@ -1,5 +1,39 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+header:userId
+
+POST
+add new property
+/add/{propertyName}
+
+POST
+add new data *property must exist first
+/add/{propertyName}/{data}
+
+GET
+get all stored property
+/select/properties
+
+GET
+get all data based on property
+/select/{propertyName}
+
+GET
+get data based on search/query data
+/select/{propertyName}/{data}
+
+UPDATE
+update data based on search/query data
+/update/{propertyName}/{oldData}/{newData}
+
+DELETE
+delete specific data on a property
+/delete/{propertyName}/{data}
+
+<!-- DELETE
+delete property and also the whole data attached to it
+/delete/{propertyName} -->
+
 ## Getting Started
 
 First, run the development server:
