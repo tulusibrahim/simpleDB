@@ -1,6 +1,14 @@
 import { supabase } from "../../../../../helper/helper"
+import NextCors from 'nextjs-cors';
 
 export default async function handler(req, res) {
+    await NextCors(req, res, {
+        // Options
+        methods: ['GET', 'HEAD', 'PUT', 'PATCH', 'POST', 'DELETE'],
+        origin: '*',
+        optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
+    });
+
     let dbData = process.env.DB_DATA
     let property = req.query.property
     let oldData = req.query.oldData
