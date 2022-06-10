@@ -1,6 +1,7 @@
 import { Button, Flex, Menu, MenuButton, MenuList, MenuItem, Code, } from '@chakra-ui/react';
 import { FiChevronDown } from 'react-icons/fi'
-import useToggleColor from './useToggleColor';
+import useToggleColor from '../helper/useToggleColor';
+
 const CodeExample = ({ exampleTitle, currentExample, data, setCurrentExample }) => {
     let { colorMode } = useToggleColor()
 

@@ -2,25 +2,16 @@ import { Flex } from '@chakra-ui/react';
 import Head from 'next/head'
 import React, { useState } from 'react';
 import { data, exampleTitle, description } from '.././helper/data'
-import APISpec from '../helper/apiSpec';
-import CodeExample from '../helper/codeExample';
-import CTA from '../helper/cta';
-import Hero from '../helper/hero';
-import Navbar from '../helper/navbar';
+import APISpec from '../components/apiSpec';
+import CodeExample from '../components/codeExample';
+import CTA from '../components/cta';
+import Hero from '../components/hero';
+import Navbar from '../components/navbar';
 import useToggleColor from '../helper/useToggleColor';
 
 export default function Home() {
   const [currentExample, setCurrentExample] = useState(0)
   let { toggleColorMode, bgColor } = useToggleColor()
-
-  const test = async () => {
-    //2323r23r
-    //3rr43434r
-    let tess = 'beda header cb/gajadi ah'
-    let url = 'https://simpledb.vercel.app/api/select/username'
-    let insert = await fetch(url, { headers: { userid: '3rr43434r' } })
-    console.log(await insert.json())
-  }
 
   return (
     <Flex w='100%' minH='100vh' direction='column' alignItems='center' fontFamily='Nunito' bg={bgColor}>
@@ -43,7 +34,7 @@ export default function Home() {
         </script>
       </Head>
 
-      <Navbar test={test} toggleColorMode={toggleColorMode} />
+      <Navbar toggleColorMode={toggleColorMode} />
 
       <Flex w='100%' minH='80vh' alignItems='center' direction='column' >
 

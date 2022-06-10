@@ -1,5 +1,5 @@
-import { Button, Flex, Icon } from "@chakra-ui/react";
-import { BsMoonFill, BsGithub } from 'react-icons/bs';
+import { Flex, Icon } from "@chakra-ui/react";
+import { BsMoonFill } from 'react-icons/bs';
 
 const Navbar = ({ toggleColorMode }) => {
     return (
