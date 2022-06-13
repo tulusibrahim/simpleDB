@@ -32,7 +32,7 @@ const APISpec = ({ currentExample, description }) => {
             </Flex>
             {
                 description[currentExample].header.map(i => (
-                    <Flex>
+                    <Flex key={i.name}>
                         <Code colorScheme='green'>{i.name}</Code> &nbsp; {i.type}.
                     </Flex>
                 ))
