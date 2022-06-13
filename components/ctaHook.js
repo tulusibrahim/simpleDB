@@ -32,7 +32,7 @@ const useCTA = () => {
         getToken()
     }, [])
 
-    return { token, toast, colorMode, generateToken, copyToken }
+    return { token, toast, colorMode, generateToken, copyToken, setToken, getToken }
 }
 
 export default useCTA;
