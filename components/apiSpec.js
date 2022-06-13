@@ -15,7 +15,7 @@ const APISpec = ({ currentExample, description }) => {
             {
                 description[currentExample].parameter.length > 0 ?
                     description[currentExample].parameter.map(i => (
-                        <Flex my='5px' direction='column'>
+                        <Flex my='5px' direction='column' key={i.name}>
                             <Flex>
                                 <Code colorScheme='green'>{i.name}</Code> &nbsp; {i.type}.
                             </Flex>
