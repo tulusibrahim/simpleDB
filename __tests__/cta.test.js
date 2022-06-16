@@ -1,7 +1,7 @@
 import { fireEvent, render, screen } from '@testing-library/react'
 import "@testing-library/jest-dom"
 import CTA from '../components/cta'
-// import 'node-fetch'
+
 test('should render CTA component', () => {
     render(<CTA />)
 
@@ -9,13 +9,10 @@ test('should render CTA component', () => {
     expect(text).toBeVisible()
 })
 
-// test('should render token after click button', async () => {
-//     render(<CTA />)
+test('should render create token button', () => {
+    render(<CTA />)
 
-//     let button = screen.getByRole('button')
-//     global.fetch = jest.fn(() => Promise.resolve({ json: () => Promise.resolve({ token: 'sdfsd' }) }))
-//     fireEvent.click(button)
+    let btn = screen.getByRole('button')
 
-//     let text = screen.getByText(/sdfsd/i)
-//     expect(text).toBeInTheDocument()
-// })
+    expect(btn).toBeVisible()
+})

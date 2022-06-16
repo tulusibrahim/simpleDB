@@ -1,7 +1,7 @@
 import { act, renderHook } from '@testing-library/react-hooks'
 import "@testing-library/jest-dom"
 import useCTA from '../components/ctaHook'
-import { screen } from '@testing-library/react'
+// import { screen } from '@testing-library/react'
 
 
 test('should generate token', () => {
@@ -16,7 +16,7 @@ test('should generate token', () => {
     expect(result.current.token).toEqual('token')
 })
 
-test('should render toast', () => {
+test('should render toastafter copy token', () => {
     const { result } = renderHook(() => useCTA())
 
     Object.defineProperty(navigator, "clipboard", {
@@ -31,4 +31,14 @@ test('should render toast', () => {
     })
 
     expect(navigator.clipboard.writeText).toHaveBeenCalledTimes(1)
+})
+
+test('should get token', () => {
+    const { result } = renderHook(() => useCTA())
+
+    act(() => {
+        result.current.getToken()
+    })
+
+    expect(result.current.token).not.toEqual('')
 })
