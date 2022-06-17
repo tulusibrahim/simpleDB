@@ -22,7 +22,7 @@ const CodeExample = ({ exampleTitle, currentExample, data, setCurrentExample }) 
                 </Menu>
             </Flex>
 
-            <Flex w='100%' bg={colorMode == 'dark' ? 'gray.600' : 'gray.800'} overflowX={'scroll'} h='fit-content' direction='column' borderRadius='md' p='10px' pos='relative' role='application'>
+            <Flex w='100%' bg={colorMode == 'dark' ? 'gray.600' : 'gray.800'} overflowX={'auto'} h='fit-content' direction='column' borderRadius='md' p='10px' pos='relative' role='application'>
                 {
                     data[currentExample].map((i, id) => (
                         <Code key={id} whiteSpace='pre' bg='none' w='100%' px='20px' h='fit-content' color='whiteAlpha.800'>{i}</Code>

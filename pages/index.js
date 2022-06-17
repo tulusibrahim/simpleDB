@@ -5,6 +5,7 @@ import { data, exampleTitle, description } from '.././helper/data'
 import APISpec from '../components/apiSpec';
 import CodeExample from '../components/codeExample';
 import CTA from '../components/cta';
+import Feedback from '../components/feedback';
 import Hero from '../components/hero';
 import Navbar from '../components/navbar';
 import useToggleColor from '../helper/useToggleColor';
@@ -48,6 +49,8 @@ export default function Home() {
       </Flex>
 
       <CTA />
+
+      <Feedback />
 
     </Flex >
   )
