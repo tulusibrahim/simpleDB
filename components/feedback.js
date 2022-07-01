@@ -9,7 +9,7 @@ const Feedback = () => {
     return (
         <>
             <Flex w='95%' h='8vh' justify='space-between' alignItems='center' alignSelf='center' py='40px'>
-                <a href="https://www.producthunt.com/posts/simpledb?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-simpledb" target="_blank">
+                <a href="https://www.producthunt.com/posts/simpledb?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-simpledb" target="_blank" rel="noreferrer" >
                     <Image src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=350115&theme=light" alt="SimpleDB - Let&#0032;you&#0032;store&#0032;data&#0032;without&#0032;touching&#0032;the&#0032;database | Product Hunt" h="54px" w={['130px', '130px', '200px']} />
                 </a>
                 <Flex cursor='pointer' onClick={onOpen} alignItems='center' px='10px' borderRadius='md' h='70%' _hover={{ bgColor: colorMode === 'dark' ? 'gray.900' : 'whiteAlpha.700' }}>
