@@ -11,19 +11,18 @@ export default async function handler(req, res) {
 
     let dbData = process.env.DB_DATA
     let property = req.query.property
-    let data = req.query.data
     let id = req.headers.userid
 
     if (id == undefined) {
         res.status(401).json({ message: 'Unauthorized' })
     }
     else {
-        let select = await supabase.from(dbData).delete().match({ userId: id, property: property, data: data })
+        let select = await supabase.from(dbData).delete().match({ userId: id, property: property })
         console.log(select)
 
         if (select.data.length == 0) {
             if (!select.error) {
-                return res.json({ message: 'You might have typo in property or data, or it has been deleted' })
+                return res.json({ message: 'You might have typo in property name or the property has been deleted' })
             }
         }
 

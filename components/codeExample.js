@@ -1,4 +1,4 @@
-import { Button, Flex, Menu, MenuButton, MenuList, MenuItem, Code, } from '@chakra-ui/react';
+import { Button, Flex, Menu, MenuButton, MenuList, MenuItem, Code, Badge } from '@chakra-ui/react';
 import { FiChevronDown } from 'react-icons/fi'
 import useToggleColor from '../helper/useToggleColor';
 
@@ -15,7 +15,14 @@ const CodeExample = ({ exampleTitle, currentExample, data, setCurrentExample }) 
                     <MenuList>
                         {
                             exampleTitle.map((i, id) => (
-                                <MenuItem key={id} onClick={() => setCurrentExample(id)}>{i}</MenuItem>
+                                <MenuItem key={id} onClick={() => setCurrentExample(id)}>
+                                    {i}
+                                    {i == 'Delete property' &&
+                                        <>
+                                            &nbsp;<Badge variant='solid' colorScheme='green'>New!</Badge>
+                                        </>
+                                    }
+                                </MenuItem>
                             ))
                         }
                     </MenuList>

@@ -84,6 +84,20 @@ export const data = [
         "}"
     ],
     [
+        "async function deleteProperty(){",
+        "   let header = {",
+        "     userid: yourToken",
+        "   }",
+        "\n",
+        "   let url = 'https://simpledb.vercel.app/api/delete/{propertyName}'",
+        "\n",
+        "   let delete = await fetch(url, {headers: header})",
+        "\n",
+        "   let json = await delete.json()",
+        "   console.log(json)",
+        "}"
+    ],
+    [
         "async function deleteData(){",
         "   let header = {",
         "     userid: yourToken",
@@ -105,6 +119,7 @@ export const exampleTitle = [
     'Get data based on property',
     'Get specific data',
     'Update data',
+    'Delete property',
     'Delete data'
 ]
 
@@ -208,6 +223,25 @@ export const description = [
         }],
         headerDesc: 'The token you get after create a new one.',
         note: ''
+    },
+    {
+        definition: 'Delete property.',
+        parameter: [{
+            name: 'propertyName',
+            type: 'Required',
+            parameterDesc: 'Name of the existing property.',
+        },
+        {
+            name: 'data',
+            type: 'Required',
+            parameterDesc: 'Value of the data you want to delete.',
+        }],
+        header: [{
+            name: 'userid',
+            type: 'Required'
+        }],
+        headerDesc: 'The token you get after create a new one.',
+        note: 'Be careful! Once you delete a property, all data attached to it will also be deleted.'
     },
     {
         definition: 'Delete data.',
